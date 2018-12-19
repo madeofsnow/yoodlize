@@ -46,31 +46,7 @@ module.exports = {
             .expect.element('@searchedPage').text.to.contain('Golf').after(5000)
 
     },
-    // //Please change the Value of @email!! To test this again!
-    // 'Testing sign-up brings user to dashboard.': browser => {
-    //     yoodlize
-    //         .click('@signUp')
-    //         .click('@signEmail')
-    //         .setValue('@fN', 'a')
-    //         .setValue('@ln', 'h')
-    //         .setValue('@email', 'tests@DEVPROJECTssssssssss.com')
-    //         .setValue('@pw', '123456789')
-    //         .setValue('@mo', '9')
-    //         .setValue('@day', '15')
-    //         .setValue('@yr', '1987')
-    //         .click('@subBtn')
-    //         .expect.element('@dash').to.be.visible.before(50000)
-
-    // },
-    // //Failed HERE!!!! < ---------------------->
-    // 'Testing login and if it brings user back to orginal site' :browser => {
-    //     yoodlize
-    //         .click('@login')
-    //         .setValue('@email', 'tests@DEVPROJECTssssssssss.com')
-    //         .setValue('@pw', '123456789')
-    //         .expect.element('a[href$="/s?category=86"]').to.not.visible.before(50000)
-
-
+    
 
 }
 

@@ -1,7 +1,54 @@
+var requestingItem ={
+    requestItem: function(date,email,pw,text,name,cvv,CC,ccMo,ccYr){
+        this
+        // .click('@login')
+        // .setValue('@email',email)
+        // .setValue('@pw',pw)
+        // .click('@LoginBtn')
+        // .click('@search')
+        // .setValue('@search',searching)
+        // .click('@searchBtn')
+        // .click('@surfItem')
+        // this.swtichWindow('newWindowID')
+        .click('@ReqStart')
+        .expect.element('@ReqStart').to.be.present.after(5000)
+        this
+        .setValue('@ReqStart',date)
+        .click('@nextReq')
+        .expect.element('@email').to.be.present.after(5000)
+        this
+        .setValue('@email',email)
+        .setValue('@pw',pw)
+        .click('@LoginBtn')
+        .expect.element('@ReqStart').to.be.present.after(5000)
+        this
+        .setValue('@ReqStart',date)
+        .click('@nextReq')
+        .click('@NextBtn')
+        .setValue('@messReq', text)
+        .setValue('@payName', name)
+        .setValue('@CVV',cvv)
+        .click('@ccNo')
+        .setValue('@ccNo',CC)
+        .click('@ccMo')
+        .setValue('@ccMo',ccMo)
+        .click('@ccYr')
+        .setValue('@ccYr',ccYr)
+        .click('@payNow')
+        .expect.element('@receipt').text.to.contain('surf').after(5000)
+        this
+        .expect.element('@receipt').text.to.contain('View Receipt').after(5000)
+
+    }
+}
+
 module.exports = {
-    url: 'https://alpha.yoodlize.com/',
+    url:'https://alpha.yoodlize.com/details/19',
+    //'https://alpha.yoodlize.com/',
+    commands:[requestingItem],
     elements: {
         logo: 'img[src="/images/logo/blueRaw.png"]',
+        logoPic: 'div[class="sc-ibxdXY kOAXGM"]',
 
         navBtn: {
             selector: '//a[@class="dropdown-toggle"]',
@@ -17,14 +64,16 @@ module.exports = {
         geoFilter: 'input[class="geosuggest__input SearchForm-inputStyle-2pv3a"]',
         minPrice: 'input[name="priceMin"]',
         maxPrice: 'input[name="priceMax"]',
-        searchedPage: {
-            selector: '//div[@class="Search-searchResultContainer-33ivj"]',
-            locateStrategy: 'xpath'
-        },
-        filterBtn: {
-            selector: '//i[@class="fal fa-chevron-circle-down fa-lg"]',
-            locateStrategy: 'xpath'
-        },
+         searchedPage: 'div[class="Search-searchResultContainer-33ivj"]',
+        filterBtn: 'i[class="fal fa-chevron-circle-down fa-lg"]',
+        // {
+        //     selector: '//div[@class="Search-searchResultContainer-33ivj"]',
+        //     locateStrategy: 'xpath'
+        // },
+        //filterBtn: {
+            //selector: '//i[@class="fal fa-chevron-circle-down fa-lg"]',
+           // locateStrategy: 'xpath'
+    
         SEfilter1: {
             selector: '(//div[@class="icheckbox_minimal-blue"])[2]',
             locateStrategy: 'xpath'
@@ -80,16 +129,21 @@ module.exports = {
         allSport: 'a[href$="/s?category=76"]',
         outDoorBall: 'div[class="sc-bwCtUz jDCpdj"]',
         aMan: 'div[class="ListingPhotos-imageContent-1WAWo"]',
-        ReqStart: 'input[name="It is Start date id"]',
+        surfItem: 'div[class="ListingPhotos-content-oNHU3"]',
+        ReqStart: 'input[class="DateInput_input DateInput_input_1"]',
         ReqEnd:'input[name="It is End date id"]',
-        nextReq:'button[class="Meetup-button-1IEeC Meetup-btnPrimary-3Fc0g btn btn-default"]',
+        nextReq:'button[Class="sc-esjQYD XsuRc sc-ifAKCX kvYMhQ"]',
+        NextBtn: 'button[class="Meetup-button-1IEeC Meetup-btnPrimary-3Fc0g btn btn-default"]',
         messReq: 'textarea[name="message"]',
         payName: 'input[name="name"]',
         CVV: 'input[name="cvv"]',
+        ccNo: 'input[name="cardNumber"]',
         ccMo: 'select[name="expiryDate"]',
         ccYr: 'select[name="expiryYear"]',
-        payNow: 'button[class="Payment-button-2Py7x Payment-btnPrimary-Ydh2n Payment-btnlarge-1FVRM btn btn-default"]'
-
+        payNow: 'button[class="Payment-button-2Py7x Payment-btnPrimary-Ydh2n Payment-btnlarge-1FVRM btn btn-default"]',
+        receipt: 'div[class="Itinerary-containerResponsive-3VaAu"]',
 
     }
+
+
 }

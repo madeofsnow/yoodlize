@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="2">
+
+  <testsuite name="yoodlizeFunctions"
+    errors="0" failures="0" hostname="" id="" package="yoodlizeFunctions" skipped="0"
+    tests="2" time="22.08" timestamp="Wed, 19 Dec 2018 03:47:59 GMT">
+  
+    <testcase name="Searching item and search bar appears w/ function" classname="yoodlizeFunctions" time="14.58" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Searching item with Filters w/functions" classname="yoodlizeFunctions" time="7.503" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
